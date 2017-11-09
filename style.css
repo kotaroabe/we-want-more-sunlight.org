@@ -36,17 +36,19 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 	font-family: FrutigerLTStd-UltraBlack;
 }
 html {
-	font-size: 62.5%;
+	font-size: 4.5vh;
+	line-height: 3.95vh;
+	letter-spacing: -0.3vh;
 }
 body {
-	background-color: #eeeeee;
+	background-color: #fff;
 	/*background-color: #F9C981;*/
 	margin: 0% 0% 0% 0%;
 	line-height: 0px;
 	color: #000;
 }
 a {
-	color: #000;
+	color: #aaa;
 	text-decoration: none;
 	line-height: 0px;
 }
@@ -54,16 +56,27 @@ p {
 	color: #000;
 }
 header {
+	mix-blend-mode: luminosity;
+	
 	width: 100%;
 	position: fixed;
 	margin-left: auto;
 	margin-right: auto;
 	
 	text-align: left;
-	font-size: 7.65vw;
-	line-height: 6.75vw;
-	letter-spacing: -0.54vw;
 	
+	font-size: 10vw;
+	line-height: 10.8vw;
+	letter-spacing: -0.6vw;
+	
+/*
+	font-size: 7.65vh;
+	line-height: 6.75vh;
+	letter-spacing: -0.54vh;
+*/
+	
+	padding-top: 25vh;
+	padding-left: 3vw;
 	transition: all 0.4s ease;
 	z-index: 1000;
 }   
@@ -72,8 +85,7 @@ header span {
 	
 	color: #EF815E;
 	background: transparent;
-	margin-left: 4.5vw;
-	padding-right: 0.75vw;
+	margin-left: 5vh;
 }     
 header.sticky {
 	width: 100%;
@@ -84,27 +96,26 @@ header.sticky {
 	padding-bottom: 1vw;
 	
 	text-align: center;
-	font-size: 2.25vw;
-	line-height: 1.975vw;
-	letter-spacing: -0.15vw;
+	font-size: 4.5vh;
+	line-height: 3.95vh;
+	letter-spacing: -0.3vh;
 	
+	padding-top: 1vw;
+	padding-left: 1vw;
 	transition: all 0.4s ease;
 	
 }
 header.sticky span {
 	letter-spacing: -0.09vw;
-	color: #000000;
-/*	color: #EF815E;*/
+/*	color: #000000;*/
+	color: #EF815E;
 	background: transparent;
-	margin-left: 1.5vw;
-	padding-right: 0.25vw;
+	margin-left: 2.25vh;
 } 
 #logo {
 	text-align: left;
-	font-family: FrutigerLTStd-Bold, sans-serif;
+	font-family: FrutigerLTStd-Black, sans-serif;
 	
-	padding-top: 1%;
-	padding-left: 1vw;
 }
 #whitebackground {
 	height: 100vh;
@@ -122,44 +133,71 @@ header.sticky span {
 .container {
 	position: relative;
 }
-.text {
-	position: absolute;
+.headline {
+/*	mix-blend-mode: difference;*/
+	
+	position: relative;
 	overflow: hidden;
-	color: #EF815E;
 	width: 80vw;
 	text-align: left;
-	font-family: FrutigerLTStd-Roman, sans-serif;
-	font-size: 4vw;
-	line-height: 5.5vw;
-	letter-spacing: 0.02vw;
+	font-family: FrutigerLTStd-Bold, sans-serif;
+	font-size: 6.75vh;
+	line-height: 9vh;
+	letter-spacing: -0.18vh;
 	padding-left: 10vw;
 	padding-right: 10vw;
 	
 	-webkit-column-count: 1; 
     -moz-column-count: 1;
     column-count: 1;
+	
 }
-.text span {
-	color: #000;
+.text {
+	position: relative;
+	overflow: hidden;
+	width: 80vw;
+	text-align: left;
+	font-family: eb-garamond, sans-serif;
+	font-size: 4.5vh;
+	line-height: 6vh;
+	letter-spacing: 0.1vh;
+	padding-left: 10vw;
+	padding-right: 10vw;
+	
+	background: #000;
+	color: #ddd;
 }
 .text a {
-	font-family: FrutigerLTStd-Black, sans-serif;
-	letter-spacing: 0.03vw;
+	color: #ddd;
+	letter-spacing: -0.01vh;
 }
-.telescope {
-	position: absolute;
-	width: 60%;
-	right: 20%;
+.rotate {
+	position: fixed;
+    bottom: 1vw;
+    right: 1vw;
+    width: 7vw;
+    height: 7vw;
+    -webkit-animation:spin 8s linear infinite;
+    -moz-animation:spin 8s linear infinite;
+    animation:spin 8s linear infinite;
+	
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.images {
+	width: 100%;
 	display: block;
 	margin: 0 auto;
-	padding-top: -20vh;
 }
 .imageScroll {
 	width: 60%;
 	right: 20%;
 	display: block;
 	margin: 0 auto;
-	z-index: 10;
+	z-index: 1;
 }
 .space {
 	height: 10vh;
@@ -168,6 +206,10 @@ header.sticky span {
 MEDIA QUERY
 */
 @media only screen and (max-width : 640px) {
+
+#whitebackground {
+	height: 120vh;
+}
 	
 header {
 	font-size: 10.2vw;
@@ -175,12 +217,23 @@ header {
 	letter-spacing: -0.72vw;
 	
 	padding-bottom: 1.2vw;
+/*
+	font-size: 10.2vw;
+	line-height: 9vw;
+	letter-spacing: -0.72vw;
+	
+	padding-bottom: 1.2vw;
+*/
 /*	color: #EF815E;*/
 	background: #fff;
 	border-bottom: none;
+	
+	padding-top: 1vw;
+	padding-left: 1vw;
 }   
 header span {
 	margin-left: 6vw;
+	letter-spacing: -0.27vw;
 } 
 
 header.sticky {
@@ -192,37 +245,29 @@ header.sticky {
 /*	color: #EF815E;*/
 	background: #fff;
 	border-bottom: none;
+	
+	padding-top: 1vw;
+	padding-left: 1vw;
 }   
 header.sticky span {
 	color: #EF815E;
 	margin-left: 6vw;
+	letter-spacing: -0.27vw;
 } 	
-#logo {
-	padding-top: 3%;
-	padding-left: 3vw;
-}
 #whitebackground {
 	height: 55vh;
 }
-.telescope {
-	width: 60%;
-	right: 20%;
-	display: block;
-	margin: 0 auto;
-	padding-top: 0vh;
-}
-.yellowbackground {
-	height: 42vh;
-	width: 100vw;
-	background: #fdec9f;
-}
+.headline {
+	width: 90%;
+	padding-left: 5%;
+	padding-right: 5%;
+	}
 .text {
 	width: 90%;
 	text-align: left;
-	font-family: FrutigerLTStd-Roman, sans-serif;
-	font-size: 7vw;
-	line-height: 12vw;
-	letter-spacing: 0.01vw;
+	font-size: 3vh;
+	line-height: 4vh;
+	letter-spacing: 0.05vh;
 	padding-left: 5%;
 	padding-right: 5%;
 	
@@ -230,33 +275,5 @@ header.sticky span {
     -moz-column-count: 1; /* Firefox */
     column-count: 1;
 }	
-.textSmall {
-	position: absolute;
-	overflow: hidden;
-	color: #333;
-	width: 80vw;
-	text-align: center;
-	font-family: FrutigerLTStd-Roman, sans-serif;
-	font-size: 3.5vw;
-	line-height: 6vw;
-	letter-spacing: 0.01vw;
-	padding-left: 10vw;
-	padding-right: 10vw;
-	
-	-webkit-column-count: 1; 
-    -moz-column-count: 1;
-    column-count: 1;
-}	
-
-.telescope {
-	width: 90%;
-	right: 5%;
-	left: 5%;
-}
-.imageScroll {
-	width: 90%;
-	right: 5%;
-	left: 5%;
-}
 	
 }

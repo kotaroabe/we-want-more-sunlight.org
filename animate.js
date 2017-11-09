@@ -1,3 +1,16 @@
+$('head').append(
+'<style type="text/css">body {display:none;}'
+);
+$(window).load(function() {
+$('body').delay(300).fadeIn("slow");
+});
+
+$( "#toggleColour" ).hover(function() {
+  alert( "First handler for .toggle() called." );
+}, function() {
+  alert( "Second handler for .toggle() called." );
+});
+
 /* for fading effect */
 
 window.onload = function() {
@@ -24,11 +37,13 @@ window.onload = function() {
 /* for sticky header */
 
 $(window).scroll(function() {
-    if ($(this).scrollTop() > 500){  
+    if ($(this).scrollTop() > 200){  
         $('header').addClass("sticky");
+        $('rotate').addClass("yes");
     }
     else{
         $('header').removeClass("sticky");
+        $('rotate').removeClass("yes");
     }
 });
 
